@@ -21,8 +21,18 @@ import java.util.ArrayList;
 public class Server implements Runnable {
 	
 	private int port = 10101;
+	private ServerSocket server;
 	private ArrayList<ConnectionHandler> connections;
-
+	private boolean finished;
+	
+	/*
+	 * Constructor
+	 */
+	public Server() {
+		connections = new ArrayList<>();
+		finished = false;
+	}
+	
 	@Override
 	public void run() {
 		/*
@@ -30,13 +40,29 @@ public class Server implements Runnable {
 		 * Incoming connections are handled by instances of ConnectionHandler.
 		 */
 		try {
-			ServerSocket server = new ServerSocket(port);
-			Socket client = server.accept();
-			ConnectionHandler handler = new ConnectionHandler(client);
-			connections.add(handler);
+			server = new ServerSocket(port);
+			while (!finished) {
+				Socket client = server.accept();
+				ConnectionHandler handler = new ConnectionHandler(client);
+				connections.add(handler);
+			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
+			shutDownServer();
+		}
+	}
+	
+	public void shutDownServer() {
+		finished = true;
+		if (!server.isClosed()) {
+			try {
+				server.close();
+			} catch (IOException e) {
+				// We can not handle an IOException in this instance, so we are going to ignore it.
+			}
+		for (ConnectionHandler h : connections) {
+			h.shutDownConnectionHandler();
+		}
 		}
 	}
 	
@@ -58,6 +84,9 @@ public class Server implements Runnable {
 		System.out.println(s);
 	}
 	
+	/*
+	 * Connection Handler sub class
+	 */	
 	class ConnectionHandler implements Runnable {
 		/*
 		 * Handles client connections.
@@ -67,10 +96,13 @@ public class Server implements Runnable {
 		private PrintWriter output; /*Data sent TO client*/
 		private String nickname;
 		
+		/*
+		 * Constructor
+		 */
 		public ConnectionHandler(Socket client) {
 			this.client = client;
 		}
-		
+
 		@Override
 		public void run() {
 			/*
@@ -91,16 +123,27 @@ public class Server implements Runnable {
 							log("Nick is not yet implemented.");
 							//changeNickname();
 						if (userInput.equals(":quit"))
-							// TODO Implement quit routine
-							log("Quit is not yet implemented.");
-							//quit();
+							broadcast(nickname+" has left the chat.");
+							shutDownConnectionHandler();
 					} else {
 						broadcast(userInput);
 					}
 				}
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+				shutDownConnectionHandler();
+			}
+		}
+		
+		public void shutDownConnectionHandler() {
+			try {
+				input.close();
+				output.close();
+				if (!client.isClosed()) {
+					client.close();
+				}
+			} catch(IOException e) {
+				// We can not handle an IOException in this instance, so we are going to ignore it.
 			}
 		}
 		
@@ -111,7 +154,6 @@ public class Server implements Runnable {
 				log(nickname + " just connected!");
 				broadcast(nickname + "just joined the chat. Say hello!");
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
@@ -124,7 +166,7 @@ public class Server implements Runnable {
 		}
 		
 		private void printHelp() {
-			messageToClient("Here is a list of available commands:\n"
+			messageToClient("This is a list of available commands:\n"
 					+ ":help - Shows a list of available commands.\n"
 					+ ":nick - Change your nickname.\n"
 					+ ":quit - Disconnects your from the server.\n");
