@@ -17,13 +17,24 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 public class Server implements Runnable {
 	
+	private ExecutorService threadpool;
 	private int port = 10101;
 	private ServerSocket server;
 	private ArrayList<ConnectionHandler> connections;
 	private boolean finished;
+	
+	/*
+	 * Main
+	 */
+	public static void main(String[] args) {
+		Server server = new Server();
+		server.run();
+	}
 	
 	/*
 	 * Constructor
@@ -36,15 +47,19 @@ public class Server implements Runnable {
 	@Override
 	public void run() {
 		/*
+		 * Initializes our cached thread pool and welcome socket.
 		 * Listens for incoming connections on specified port.
-		 * Incoming connections are handled by instances of ConnectionHandler.
+		 * Incoming connections are handled by instances of ConnectionHandler
+		 * and executed by the Executor Service of our thread pool.
 		 */
 		try {
+			threadpool = Executors.newCachedThreadPool();
 			server = new ServerSocket(port);
 			while (!finished) {
 				Socket client = server.accept();
 				ConnectionHandler handler = new ConnectionHandler(client);
 				connections.add(handler);
+				threadpool.execute(handler);
 			}
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -52,6 +67,10 @@ public class Server implements Runnable {
 		}
 	}
 	
+	/*
+	 * Stops the main loop within the servers run() method,
+	 * closes the server and shuts down every connection handler within the connections list.
+	 */
 	public void shutDownServer() {
 		finished = true;
 		if (!server.isClosed()) {
