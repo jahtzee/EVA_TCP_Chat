@@ -7,7 +7,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
+import java.net.ConnectException;
 import java.net.Socket;
+import java.net.SocketException;
 
 public class Client implements Runnable {
 	
@@ -39,7 +41,15 @@ public class Client implements Runnable {
 			while ((inMsg = inputFromServer.readLine()) != null) {
 				System.out.println(inMsg);
 			}
+		} catch (ConnectException e) {
+			System.err.println("Could not connect to server. Is it running?");	
+		} catch (SocketException e) {
+			System.err.println("Connection lost.");
+		} catch (IOException e) {
+			//ignore
 		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
 			shutdownClient();
 		}
 	}

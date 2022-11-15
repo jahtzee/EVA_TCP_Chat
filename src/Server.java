@@ -16,6 +16,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -61,6 +62,8 @@ public class Server implements Runnable {
 				connections.add(handler);
 				threadpool.execute(handler);
 			}
+		} catch (SocketException e) {
+			System.err.println("Connection to a client was closed unexpectedly.");
 		} catch (IOException e) {
 			e.printStackTrace();
 			shutDownServer();
