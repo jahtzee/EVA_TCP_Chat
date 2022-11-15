@@ -73,6 +73,7 @@ public class Server implements Runnable {
 	 */
 	public void shutDownServer() {
 		finished = true;
+		threadpool.shutdown();
 		if (!server.isClosed()) {
 			try {
 				server.close();
@@ -134,6 +135,9 @@ public class Server implements Runnable {
 				messageToClient("Hi, " + nickname + "! Type in a message or enter ':help' for a list of commands.\n");
 				String userInput;
 				while ((userInput = input.readLine()) != null) {
+					handleCommand(userInput);
+				}
+				/**while ((userInput = input.readLine()) != null) {
 					if (userInput.startsWith(":")) {
 						if (userInput.equals(":help"))
 							printHelp();
@@ -145,15 +149,35 @@ public class Server implements Runnable {
 							broadcast(nickname+" has left the chat.");
 							shutDownConnectionHandler();
 					} else {
-						broadcast(userInput);
+						broadcast(nickname + ": " + userInput);
 					}
-				}
+				}**/
 			} catch (IOException e) {
-				e.printStackTrace();
 				shutDownConnectionHandler();
 			}
 		}
 		
+		private void handleCommand(String userInput) {
+			if (userInput.startsWith(":nick")) {
+				String[] inputSplit = userInput.split(" ", 2);
+				if (inputSplit.length == 2) {
+					broadcast(nickname + " renamed themselves to " + inputSplit[1] + ".");
+					log(nickname + " renamed themselves to " + inputSplit[1] + ".");
+					nickname = inputSplit[1];
+					messageToClient("Successfully changed nickname to " + nickname + ".");
+				} else {
+					messageToClient("No nickname provided.");
+				}
+			} else if (userInput.startsWith(":quit")) {
+				broadcast(nickname + " has left the chat.");
+				log(nickname + " is disconnecting.");
+				shutDownConnectionHandler();
+			} else {
+				broadcast(nickname + ": " + userInput);
+			}
+			
+		}
+
 		public void shutDownConnectionHandler() {
 			try {
 				input.close();
@@ -171,7 +195,7 @@ public class Server implements Runnable {
 			try {
 				nickname = input.readLine();
 				log(nickname + " just connected!");
-				broadcast(nickname + "just joined the chat. Say hello!");
+				broadcast(nickname + " just joined the chat. Say hello!");
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
