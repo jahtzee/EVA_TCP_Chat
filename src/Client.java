@@ -1,13 +1,14 @@
+/**
+ * @author Jan Zimmer
+ * last modified 15.11.2022
+ */
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
 
-/**
- * @author Jan Zimmer
- * last modified 15.11.2022
- */
 public class Client implements Runnable {
 	
 	private int port = 10101;
