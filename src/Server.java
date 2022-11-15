@@ -167,6 +167,8 @@ public class Server implements Runnable {
 				broadcast(nickname + " has left the chat.");
 				log(nickname + " is disconnecting.");
 				shutDownConnectionHandler();
+			} else if (userInput.startsWith(":help")) {
+				printHelp();
 			} else {
 				broadcast(nickname + ": " + userInput);
 			}
