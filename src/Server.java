@@ -159,15 +159,7 @@ public class Server implements Runnable {
 		
 		private void handleCommand(String userInput) {
 			if (userInput.startsWith(":nick")) {
-				String[] inputSplit = userInput.split(" ", 2);
-				if (inputSplit.length == 2) {
-					broadcast(nickname + " renamed themselves to " + inputSplit[1] + ".");
-					log(nickname + " renamed themselves to " + inputSplit[1] + ".");
-					nickname = inputSplit[1];
-					messageToClient("Successfully changed nickname to " + nickname + ".");
-				} else {
-					messageToClient("No nickname provided.");
-				}
+				changeNickname(userInput);
 			} else if (userInput.startsWith(":quit")) {
 				broadcast(nickname + " has left the chat.");
 				log(nickname + " is disconnecting.");
@@ -176,6 +168,18 @@ public class Server implements Runnable {
 				broadcast(nickname + ": " + userInput);
 			}
 			
+		}
+
+		private void changeNickname(String userInput) {
+			String[] inputSplit = userInput.split(" ", 2);
+			if (inputSplit.length == 2) {
+				broadcast(nickname + " renamed themselves to " + inputSplit[1] + ".");
+				log(nickname + " renamed themselves to " + inputSplit[1] + ".");
+				nickname = inputSplit[1];
+				messageToClient("Successfully changed nickname to " + nickname + ".");
+			} else {
+				messageToClient("No nickname provided.");
+			}
 		}
 
 		public void shutDownConnectionHandler() {
