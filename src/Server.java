@@ -20,6 +20,13 @@ import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
 
 public class Server implements Runnable {
 	
@@ -28,7 +35,8 @@ public class Server implements Runnable {
 	private ServerSocket server;
 	private ArrayList<ConnectionHandler> connections;
 	private boolean finished;
-	
+	private File userFile = new File("userFile.lst");
+	private HashMap<String, String> userMap = new HashMap<String, String>();
 	/*
 	 * Main
 	 */
@@ -53,6 +61,11 @@ public class Server implements Runnable {
 		 * Incoming connections are handled by instances of ConnectionHandler
 		 * and executed by the Executor Service of our thread pool.
 		 */
+		if (userFile.exists()) {
+			loadUserMap();
+		} else {
+			checkForUserFile();
+		}
 		try {
 			threadpool = Executors.newCachedThreadPool();
 			server = new ServerSocket(port);
@@ -63,7 +76,8 @@ public class Server implements Runnable {
 				threadpool.execute(handler);
 			}
 		} catch (SocketException e) {
-			System.err.println("Connection to a client was closed unexpectedly.");
+			System.err.println("A socket exception occurred while running the server.");
+			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
 			shutDownServer();
@@ -107,6 +121,51 @@ public class Server implements Runnable {
 		System.out.println(s);
 	}
 	
+	public File checkForUserFile() {
+		try {
+			File userFile = new File("userFile.lst");
+			if (userFile.createNewFile()); {
+				log("userFile.lst created.");
+			}
+		} catch (IOException e) {
+			System.err.println("An error occured while checking for the userFile.");
+			e.printStackTrace();
+		}
+		return userFile;
+	}
+	
+	public void loadUserMap() {
+		Properties props = new Properties();
+		try {
+			props.load(new FileInputStream("userList.lst"));
+		} catch (FileNotFoundException e) {
+			System.err.println("userFile.lst was not found while trying to load the user list.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.err.println("An error occurred while attempting to load the user list file.");
+			e.printStackTrace();
+		}
+		for (String key : props.stringPropertyNames()) {
+			Server.this.userMap.put(key, props.get(key).toString());
+		}
+	}
+	
+	public void saveUserMap() {
+		Properties props = new Properties();
+		for (Map.Entry<String, String> entry : Server.this.userMap.entrySet()) {
+			props.put(entry.getKey(), entry.getValue());
+		}
+		try {
+			props.store(new FileOutputStream("userList.lst"), null);
+		} catch (FileNotFoundException e) {
+			System.err.println("The userList file could not be found while attempting to save.");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.err.println("An error occurred while saving the userList file.");
+			e.printStackTrace();
+		}
+	}
+	
 	/*
 	 * Connection Handler sub class
 	 */	
@@ -134,27 +193,16 @@ public class Server implements Runnable {
 			try {
 				output = new PrintWriter(client.getOutputStream(), true);
 				input = new BufferedReader(new InputStreamReader(client.getInputStream()));
-				askForNickname();
+				if (!isKnownUser()) {
+					askForNickname();
+				} else {
+					nickname = Server.this.userMap.get(this.client.getInetAddress().toString());
+				}
 				messageToClient("Hi, " + nickname + "! Type in a message or enter ':help' for a list of commands.\n");
 				String userInput;
 				while ((userInput = input.readLine()) != null) {
 					handleCommand(userInput);
 				}
-				/**while ((userInput = input.readLine()) != null) {
-					if (userInput.startsWith(":")) {
-						if (userInput.equals(":help"))
-							printHelp();
-						if (userInput.equals(":nick"))
-							// TODO Implement nickname changing function
-							log("Nick is not yet implemented.");
-							//changeNickname();
-						if (userInput.equals(":quit"))
-							broadcast(nickname+" has left the chat.");
-							shutDownConnectionHandler();
-					} else {
-						broadcast(nickname + ": " + userInput);
-					}
-				}**/
 			} catch (IOException e) {
 				shutDownConnectionHandler();
 			}
@@ -182,8 +230,19 @@ public class Server implements Runnable {
 				log(nickname + " renamed themselves to " + inputSplit[1] + ".");
 				nickname = inputSplit[1];
 				messageToClient("Successfully changed nickname to " + nickname + ".");
+				Server.this.userMap.remove(this.client.getInetAddress().toString());
+				userMap.put(this.client.getInetAddress().toString(), nickname);
+				Server.this.saveUserMap();
 			} else {
 				messageToClient("No nickname provided.");
+			}
+		}
+		
+		private boolean isKnownUser() {
+			if (Server.this.userMap.containsKey(this.client.getInetAddress().toString())) {
+				return true;
+			} else {
+				return false;
 			}
 		}
 
@@ -200,11 +259,14 @@ public class Server implements Runnable {
 		}
 		
 		private void askForNickname( ) {
+			
 			output.println("Please enter a nickname to be used for the duration of this session:\n");
 			try {
 				nickname = input.readLine();
 				log(nickname + " just connected!");
 				broadcast(nickname + " just joined the chat. Say hello!");
+				userMap.put(this.client.getInetAddress().toString(), nickname);
+				Server.this.saveUserMap();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
