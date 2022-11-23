@@ -35,7 +35,7 @@ public class Server implements Runnable {
 	private ServerSocket server;
 	private ArrayList<ConnectionHandler> connections;
 	private boolean finished;
-	private File userFile = new File("userFile.lst");
+	private File userFile = new File("userList.lst");
 	private HashMap<String, String> userMap = new HashMap<String, String>();
 	/*
 	 * Main
@@ -123,9 +123,9 @@ public class Server implements Runnable {
 	
 	public File checkForUserFile() {
 		try {
-			File userFile = new File("userFile.lst");
+			File userFile = new File("userList.lst");
 			if (userFile.createNewFile()); {
-				log("userFile.lst created.");
+				log("userList.lst created.");
 			}
 		} catch (IOException e) {
 			System.err.println("An error occured while checking for the userFile.");
@@ -139,7 +139,7 @@ public class Server implements Runnable {
 		try {
 			props.load(new FileInputStream("userList.lst"));
 		} catch (FileNotFoundException e) {
-			System.err.println("userFile.lst was not found while trying to load the user list.");
+			System.err.println("userList.lst was not found while trying to load the user list.");
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.err.println("An error occurred while attempting to load the user list file.");
