@@ -4,7 +4,7 @@
  * @mailto jazi1001@stud.hs-kl.de
  * @created 2022-10-16
  * 
- * Last modified 2022-10-16
+ * Last modified 2022-11-23
  * 
  * Server class for the TCP Chat Application.
  * 

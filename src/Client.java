@@ -1,7 +1,14 @@
 /**
+ * 
  * @author Jan Zimmer
- * last modified 15.11.2022
- */
+ * @mailto jazi1001@stud.hs-kl.de
+ * @created 2022-10-16
+ * 
+ * Last modified 2022-11-23
+ * 
+ * Client class for the TCP Chat Application.
+ * 
+ **/
 
 import java.io.BufferedReader;
 import java.io.IOException;
