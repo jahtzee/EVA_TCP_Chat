@@ -20,6 +20,7 @@ import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.locks.ReentrantLock;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -37,6 +38,7 @@ public class Server implements Runnable {
 	private boolean finished;
 	private File userFile = new File("userList.lst");
 	private HashMap<String, String> userMap = new HashMap<String, String>();
+	private ReentrantLock userMapLock = new ReentrantLock();
 	/*
 	 * Main
 	 */
@@ -64,7 +66,7 @@ public class Server implements Runnable {
 		if (userFile.exists()) {
 			loadUserMap();
 		} else {
-			checkForUserFile();
+			checkForUserMapFile();
 		}
 		try {
 			threadpool = Executors.newCachedThreadPool();
@@ -121,36 +123,40 @@ public class Server implements Runnable {
 		System.out.println(s);
 	}
 	
-	public File checkForUserFile() {
+	public File checkForUserMapFile() {
 		try {
 			File userFile = new File("userList.lst");
 			if (userFile.createNewFile()); {
 				log("userList.lst created.");
 			}
 		} catch (IOException e) {
-			System.err.println("An error occured while checking for the userFile.");
+			System.err.println("An error occured while checking for / creating the userFile.");
 			e.printStackTrace();
 		}
 		return userFile;
 	}
 	
 	public void loadUserMap() {
+		Server.this.userMapLock.lock();
 		Properties props = new Properties();
 		try {
 			props.load(new FileInputStream("userList.lst"));
+			for (String key : props.stringPropertyNames()) {
+				Server.this.userMap.put(key, props.get(key).toString());
+			}
 		} catch (FileNotFoundException e) {
 			System.err.println("userList.lst was not found while trying to load the user list.");
 			e.printStackTrace();
 		} catch (IOException e) {
 			System.err.println("An error occurred while attempting to load the user list file.");
 			e.printStackTrace();
-		}
-		for (String key : props.stringPropertyNames()) {
-			Server.this.userMap.put(key, props.get(key).toString());
+		} finally {
+			Server.this.userMapLock.unlock();
 		}
 	}
 	
 	public void saveUserMap() {
+		Server.this.userMapLock.lock();
 		Properties props = new Properties();
 		for (Map.Entry<String, String> entry : Server.this.userMap.entrySet()) {
 			props.put(entry.getKey(), entry.getValue());
@@ -163,6 +169,8 @@ public class Server implements Runnable {
 		} catch (IOException e) {
 			System.err.println("An error occurred while saving the userList file.");
 			e.printStackTrace();
+		} finally {
+			Server.this.userMapLock.unlock();
 		}
 	}
 	
