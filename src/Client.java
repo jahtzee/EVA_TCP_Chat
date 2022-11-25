@@ -4,7 +4,7 @@
  * @mailto jazi1001@stud.hs-kl.de
  * @created 2022-10-16
  * 
- * Last modified 2022-11-23
+ * Last modified 2022-11-25
  * 
  * Client class for the TCP Chat Application.
  * 
@@ -28,8 +28,21 @@ public class Client implements Runnable {
 	private boolean finished;
 	
 	public static void main(String[] args) {
+		if (args[0] != null && args[1] != null) {
+			Client client = new Client(args[0], Integer.parseInt(args[1]));
+			client.run();
+		} else {
 			Client client = new Client();
 			client.run();
+		}
+	}
+	
+	public Client() {
+	}
+	
+	public Client(String address, int port) {
+		this.port = port;
+		this.ipadr = address;
 	}
 	
 	@Override

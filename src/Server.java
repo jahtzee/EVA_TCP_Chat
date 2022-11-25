@@ -4,7 +4,7 @@
  * @mailto jazi1001@stud.hs-kl.de
  * @created 2022-10-16
  * 
- * Last modified 2022-11-23
+ * Last modified 2022-11-25
  * 
  * Server class for the TCP Chat Application.
  * 
@@ -43,8 +43,13 @@ public class Server implements Runnable {
 	 * Main
 	 */
 	public static void main(String[] args) {
-		Server server = new Server();
-		server.run();
+		if (args[0] != null) {
+			Server server = new Server(Integer.parseInt(args[0]));
+			server.run();
+		} else {
+			Server server = new Server();
+			server.run();
+		}
 	}
 	
 	/*
@@ -53,6 +58,12 @@ public class Server implements Runnable {
 	public Server() {
 		connections = new ArrayList<>();
 		finished = false;
+	}
+	
+	public Server(int port) {
+		connections = new ArrayList<>();
+		finished = false;
+		this.port = port;
 	}
 	
 	@Override
@@ -90,7 +101,7 @@ public class Server implements Runnable {
 	 * Stops the main loop within the servers run() method,
 	 * closes the server and shuts down every connection handler within the connections list.
 	 */
-	public void shutDownServer() {
+	private void shutDownServer() {
 		finished = true;
 		threadpool.shutdown();
 		if (!server.isClosed()) {
@@ -105,7 +116,7 @@ public class Server implements Runnable {
 		}
 	}
 	
-	public void broadcast(String s) {
+	private void broadcast(String s) {
 		/*
 		 * Broadcast a String s to all currently connected clients
 		 */
@@ -116,14 +127,14 @@ public class Server implements Runnable {
 		}
 	}
 	
-	public void log(String s) {
+	private void log(String s) {
 		/*
 		 * Print String s to the CLI
 		 */
 		System.out.println(s);
 	}
 	
-	public File checkForUserMapFile() {
+	private File checkForUserMapFile() {
 		try {
 			File userFile = new File("userList.lst");
 			if (userFile.createNewFile()); {
@@ -136,7 +147,7 @@ public class Server implements Runnable {
 		return userFile;
 	}
 	
-	public void loadUserMap() {
+	private void loadUserMap() {
 		Server.this.userMapLock.lock();
 		Properties props = new Properties();
 		try {
@@ -155,7 +166,7 @@ public class Server implements Runnable {
 		}
 	}
 	
-	public void saveUserMap() {
+	private void saveUserMap() {
 		Server.this.userMapLock.lock();
 		Properties props = new Properties();
 		for (Map.Entry<String, String> entry : Server.this.userMap.entrySet()) {
@@ -196,7 +207,7 @@ public class Server implements Runnable {
 		@Override
 		public void run() {
 			/*
-			 * Establishes in- and output. Asks for a nickname. Finally, awaits user input.
+			 * Establishes in- and output. Asks for a nickname if the clients address is not recognized. Finally, awaits user input.
 			 */
 			try {
 				output = new PrintWriter(client.getOutputStream(), true);
@@ -217,6 +228,9 @@ public class Server implements Runnable {
 		}
 		
 		private void handleCommand(String userInput) {
+			/*
+			 * Interprets user commands (:command)
+			 */
 			if (userInput.startsWith(":nick")) {
 				changeNickname(userInput);
 			} else if (userInput.startsWith(":quit")) {
@@ -225,6 +239,8 @@ public class Server implements Runnable {
 				shutDownConnectionHandler();
 			} else if (userInput.startsWith(":help")) {
 				printHelp();
+			} else if (userInput.startsWith(":users")) {
+				printConnectedUsers();
 			} else {
 				broadcast(nickname + ": " + userInput);
 			}
@@ -254,7 +270,7 @@ public class Server implements Runnable {
 			}
 		}
 
-		public void shutDownConnectionHandler() {
+		private void shutDownConnectionHandler() {
 			try {
 				input.close();
 				output.close();
@@ -280,17 +296,25 @@ public class Server implements Runnable {
 			}
 		}
 		
-		public void messageToClient(String s) {
+		private void messageToClient(String s) {
 			/*
 			 * Output String s on Client CLI
 			 */
 			output.println(s);
 		}
 		
+		private void printConnectedUsers() {
+			messageToClient("Currently connected:");
+			for (ConnectionHandler ch :Server.this.connections) {
+				messageToClient("- "+ch.nickname);
+			}
+		}
+		
 		private void printHelp() {
 			messageToClient("This is a list of available commands:\n"
 					+ ":help - Shows a list of available commands.\n"
 					+ ":nick - Change your nickname.\n"
+					+ ":users - Shows a list of connected users.\n"
 					+ ":quit - Disconnects your from the server.\n");
 		}
 	}
