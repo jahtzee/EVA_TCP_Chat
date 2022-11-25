@@ -12,9 +12,13 @@ public class TestScenario {
 
 	public static void main(String[] args) {
 		ArrayList<Client> clients = new ArrayList<Client>();
+		ArrayList<Thread> threadfield = new ArrayList<Thread>();
 		for (int i = 1; i<= 100; i++) {
-			clients.add(new Client());
+			Client c = new Client();
+			clients.add(c);
+			Thread t = new Thread(c);
+			threadfield.add(t);
+			t.run();
 		}
 	}
-
 }
