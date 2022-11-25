@@ -39,6 +39,7 @@ public class Server implements Runnable {
 	private File userFile = new File("userList.lst");
 	private HashMap<String, String> userMap = new HashMap<String, String>();
 	private ReentrantLock userMapLock = new ReentrantLock();
+	
 	/*
 	 * Main
 	 */
@@ -313,9 +314,9 @@ public class Server implements Runnable {
 		private void printHelp() {
 			messageToClient("This is a list of available commands:\n"
 					+ ":help - Shows a list of available commands.\n"
-					+ ":nick - Change your nickname.\n"
+					+ ":nick new_Nickname - Change your nickname.\n"
 					+ ":users - Shows a list of connected users.\n"
-					+ ":quit - Disconnects your from the server.\n");
+					+ ":quit - Disconnects you from the server.\n");
 		}
 	}
 
