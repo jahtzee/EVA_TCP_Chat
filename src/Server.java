@@ -220,7 +220,7 @@ public class Server implements Runnable {
 				}
 				messageToClient("Hi, " + nickname + "! Type in a message or enter ':help' for a list of commands.\n");
 				String userInput;
-				while ((userInput = input.readLine()) != null || !client.isClosed()) {
+				while ((userInput = input.readLine()) != null && !client.isClosed()) {
 					handleCommand(userInput);
 				}
 			} catch (IOException e) {
