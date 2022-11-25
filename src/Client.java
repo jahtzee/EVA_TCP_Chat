@@ -28,7 +28,7 @@ public class Client implements Runnable {
 	private boolean finished;
 	
 	public static void main(String[] args) {
-		if (args[0] != null && args[1] != null) {
+		if (args.length == 2) {
 			Client client = new Client(args[0], Integer.parseInt(args[1]));
 			client.run();
 		} else {

@@ -44,7 +44,7 @@ public class Server implements Runnable {
 	 * Main
 	 */
 	public static void main(String[] args) {
-		if (args[0] != null) {
+		if (args.length == 1) {
 			Server server = new Server(Integer.parseInt(args[0]));
 			server.run();
 		} else {
