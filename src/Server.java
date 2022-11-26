@@ -310,7 +310,8 @@ public class Server implements Runnable {
 		private void printConnectedUsers() {
 			messageToClient("Currently connected:");
 			for (ConnectionHandler ch :Server.this.connections) {
-				messageToClient("- "+ch.nickname);
+				if (ch.client.isConnected())
+					messageToClient("- "+ch.nickname);
 			}
 		}
 		
