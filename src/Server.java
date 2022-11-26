@@ -217,6 +217,8 @@ public class Server implements Runnable {
 					askForNickname();
 				} else {
 					nickname = Server.this.userMap.get(this.client.getInetAddress().toString());
+					log(nickname + " just connected!");
+					broadcast(nickname + " just joined the chat. Say hello!");
 				}
 				messageToClient("Hi, " + nickname + "! Type in a message or enter ':help' for a list of commands.\n");
 				String userInput;
@@ -236,7 +238,8 @@ public class Server implements Runnable {
 				changeNickname(userInput);
 			} else if (userInput.startsWith(":quit")) {
 				broadcast(nickname + " has left the chat.");
-				log(nickname + " is disconnecting.");
+				log(nickname + " has disconnected.");
+				Server.this.connections.remove(this);
 				shutDownConnectionHandler();
 			} else if (userInput.startsWith(":help")) {
 				printHelp();
