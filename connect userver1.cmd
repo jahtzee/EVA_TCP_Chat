@@ -1,1 +1,1 @@
-ssh ich@userver1.ds.fh-kl.de
+ssh ich@10.0.3.103

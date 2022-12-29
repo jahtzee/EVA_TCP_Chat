@@ -21,7 +21,7 @@ import java.net.SocketException;
 public class Client implements Runnable {
 	
 	private int port = 10101;
-	private String ipadr = "userver1.ds.fh-kl.de"; //127.0.0.1
+	private String ipadr = "10.0.3.103"; //userver1
 	private Socket client;
 	private PrintWriter outputToServer;
 	private BufferedReader inputFromServer;
