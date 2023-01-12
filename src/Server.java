@@ -75,6 +75,7 @@ public class Server implements Runnable {
 		 * Incoming connections are handled by instances of ConnectionHandler
 		 * and executed by the Executor Service of our thread pool.
 		 */
+		log("Server is now running.");
 		if (userFile.exists()) {
 			loadUserMap();
 		} else {
@@ -217,8 +218,8 @@ public class Server implements Runnable {
 					askForNickname();
 				} else {
 					nickname = Server.this.userMap.get(this.client.getInetAddress().toString());
-					log(nickname + " just connected!");
-					broadcast(nickname + " just joined the chat. Say hello!");
+					log(nickname + " just connected.");
+					broadcast(nickname + " just joined the chat. Hi there!");
 				}
 				messageToClient("Hi, " + nickname + "! Type in a message or enter ':help' for a list of commands.\n");
 				String userInput;
@@ -291,8 +292,8 @@ public class Server implements Runnable {
 			output.println("Please enter a nickname to be used for the duration of this session:\n");
 			try {
 				nickname = input.readLine();
-				log(nickname + " just connected!");
-				broadcast(nickname + " just joined the chat. Say hello!");
+				log(nickname + " just connected.");
+				broadcast(nickname + " just joined the chat. Hi there!");
 				userMap.put(this.client.getInetAddress().toString(), nickname);
 				Server.this.saveUserMap();
 			} catch (IOException e) {

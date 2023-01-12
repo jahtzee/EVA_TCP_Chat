@@ -16,17 +16,19 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.ConnectException;
 import java.net.Socket;
-import java.net.SocketException;
+import java.net.UnknownHostException;
 
 public class Client implements Runnable {
-	
+
 	private int port = 10101;
 	private String ipadr = "10.0.3.103"; //userver1
 	private Socket client;
 	private PrintWriter outputToServer;
 	private BufferedReader inputFromServer;
-	private boolean finished;
-	
+	private Boolean isDone = false;
+	private Boolean isReconnectAttempt = false;
+	private Thread inputHandlerThread; //Separate thread for the InputHandler
+
 	public static void main(String[] args) {
 		if (args.length == 2) {
 			Client client = new Client(args[0], Integer.parseInt(args[1]));
@@ -36,59 +38,100 @@ public class Client implements Runnable {
 			client.run();
 		}
 	}
-	
+
 	public Client() {
 	}
-	
+
 	public Client(String address, int port) {
 		this.port = port;
 		this.ipadr = address;
 	}
-	
+
 	@Override
 	public void run() {
+		try {
+			connect();
+		} catch (ConnectException e) {
+			System.err.println("Unable to establish a connection.");
+		} catch (UnknownHostException e) {
+			System.err.println("Unable to establish a connection. Please check server address.");
+		} catch (IOException e) {
+			//We can't handle an IOException in this instance.
+		}
+	}
+
+	private void connect() throws UnknownHostException, IOException {
 		/*
-		 * Establishes a connection to the specified Server
+		 * Establishes a connection to the specified Server. An InputHandler is instantiated and assigned to a new thread.
+		 * The client continues listening for incoming input from the server until the connection is closed. If closed unexpectedly,
+		 * we attempt reconnection. Reconnection in the finally block is not attempted if we are already in a reconnect attempt.
 		 */
 		try {
-			String inMsg;
 			client = new Socket(ipadr, port);
 			outputToServer = new PrintWriter(client.getOutputStream(), true);
 			inputFromServer = new BufferedReader(new InputStreamReader(client.getInputStream()));
-			InputHandler inputHandler = new InputHandler();
-			Thread thread = new Thread(inputHandler); //We use just a single thread here, not a pool, since there is only one InputHandler per instance of Client
-			thread.start(); //Open another thread with the inputHandler
+			if (!isReconnectAttempt) {
+				InputHandler inputHandler = new InputHandler();
+				inputHandlerThread = new Thread(inputHandler); 
+				inputHandlerThread.start(); 
+			}
+			String inMsg;
 			while ((inMsg = inputFromServer.readLine()) != null) {
+				isReconnectAttempt = false; //A successful connection ends the reconnection attempt.
 				System.out.println(inMsg);
 			}
-		} catch (ConnectException e) {
-			System.err.println("Could not connect to server. Is it running?");	
-		} catch (SocketException e) {
-			System.err.println("Connection lost.");
-		} catch (IOException e) {
-			//ignore
-		} catch (Exception e) {
-			e.printStackTrace();
 		} finally {
-			shutdownClient();
+			if (!isDone && !isReconnectAttempt) {
+				System.err.println("Connection closed unexpectedly. Attempting to reconnect...");
+				reconnect();
+			}
 		}
 	}
-	
+
+	private void reconnect() {
+		/*
+		 * Up to 5 reconnection attempts are made before the client is closed.
+		 */
+		int reconnectionAttempts = 0;
+		isReconnectAttempt = true;
+		while(!isDone && reconnectionAttempts < 5) {
+			try {
+				Thread.sleep(1000);
+				connect();
+			} catch (ConnectException e) {
+				reconnectionAttempts++;
+			} catch (UnknownHostException e) {
+				reconnectionAttempts++;
+				e.printStackTrace();
+			} catch (IOException e) {
+				//We can't handle an IOException in this instance.
+				e.printStackTrace();
+			} catch (InterruptedException e) {
+				//We can't handle an InterruptedException in this instance.
+			}
+		}
+		if(reconnectionAttempts >=5){
+			System.err.println("Max reconnection attempts reached. Shutting down...");
+			shutdownClient();
+		}	
+	}
+
 	private void shutdownClient() {
 		/*
 		 * Closes resources and client
 		 */
-		finished = true;
+		isDone = true;
 		try {
 			inputFromServer.close();
 			outputToServer.close();
 			if (!client.isClosed()) {
 				client.close();
 			}
+			System.exit(0); //This is terrible, but reading a line from cliInput in the InputHandler blocks the entire thread
 		} catch (IOException e) {
 			// We can not handle an IOException in this instance, so we are going to ignore it.
 		}
-		
+
 	}
 
 	class InputHandler implements Runnable {
@@ -99,7 +142,7 @@ public class Client implements Runnable {
 		public void run() {
 			try {
 				BufferedReader cliInput = new BufferedReader(new InputStreamReader(System.in));
-				while(!finished) {
+				while(!isDone && !Thread.currentThread().isInterrupted()) {
 					String msg = cliInput.readLine();
 					if (msg.equals(":quit")) {
 						outputToServer.println(msg); // sends :quit
