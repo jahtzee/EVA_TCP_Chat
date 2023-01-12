@@ -1,0 +1,798 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<com.yattasolutions.uml.diagrams.classifier:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:com.yattasolutions.diagrams="http://ns.yatta-solutions.com/umllab/diagrams/1.1.0" xmlns:com.yattasolutions.uml.diagrams.classifier="http://ns.yatta-solutions.com/umllab/diagrams/classifier/1.1.0" xmi:id="_smHAgJK1Ee2EVNitZyU9YQ">
+  <modelElement href="EVA_TCP_Chat.uml#_rtjn4JK1Ee2EVNitZyU9YQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_tFYWcJK1Ee2EVNitZyU9YQ" targetItem="_tFlK9pK1Ee2EVNitZyU9YQ" sourceItem="_tFXIUJK1Ee2EVNitZyU9YQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_tFY9gZK1Ee2EVNitZyU9YQ" targetItem="_tFlK_JK1Ee2EVNitZyU9YQ" sourceItem="_tFY9gJK1Ee2EVNitZyU9YQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_tFaLoZK1Ee2EVNitZyU9YQ" targetItem="_tFlLEJK1Ee2EVNitZyU9YQ" sourceItem="_tFaLoJK1Ee2EVNitZyU9YQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tFhgYJK1Ee2EVNitZyU9YQ" source="_tFlKyZK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7OU5JK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tFhgYZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7O78JK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tFhgYpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tFhgY5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7OU5ZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFhgZJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFhgZZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tFhgZpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="threadpool" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6wa0ZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFhgZ5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFhgaJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tFiHcJK1Ee2EVNitZyU9YQ" source="_tFlKyZK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7O78ZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tFiHcZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7PjAJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tFiHcpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tFiHc5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7O78pK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFiHdJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFiHdZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tFiHdpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="server" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6xo8ZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFiHd5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFiHeJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tFiugJK1Ee2EVNitZyU9YQ" source="_tFlKyZK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7PjAZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tFiugZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7PjA5K1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tFiugpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tFiug5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7PjApK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFiuhJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFiuhZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tFiuhpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="connections" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6xo85K1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFiuh5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFiuiJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tFj8oJK1Ee2EVNitZyU9YQ" source="_tFlKyZK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7PjBJK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tFj8oZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7QKEJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tFj8opK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tFj8o5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7PjBZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFj8pJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFj8pZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tFj8ppK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="userFile" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6zeIJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFj8p5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFj8qJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tFkjsJK1Ee2EVNitZyU9YQ" source="_tFlKyZK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7QKEZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tFkjsZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7QxIJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tFkjspK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tFkjs5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7QKEpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFkjtJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFkjtZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tFkjtpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="userMap" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6zeI5K1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFkjt5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFkjuJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tFlKwJK1Ee2EVNitZyU9YQ" source="_tFlKyZK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7QxIZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tFlKwZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7QxI5K1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tFlKwpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tFlKw5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7QxIpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlKxJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFlKxZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tFlKxpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="userMapLock" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s60sQJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlKx5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlKyJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_tGqI0ZK1Ee2EVNitZyU9YQ" targetItem="_tGvBUJK1Ee2EVNitZyU9YQ" sourceItem="_tGqI0JK1Ee2EVNitZyU9YQ"/>
+  <edges xsi:type="com.yattasolutions.diagrams:ConnectionVisual" xmi:id="_tGrW8ZK1Ee2EVNitZyU9YQ" targetItem="_tGvBj5K1Ee2EVNitZyU9YQ" sourceItem="_tGrW8JK1Ee2EVNitZyU9YQ"/>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tGtMIJK1Ee2EVNitZyU9YQ" source="_tGvBUJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7RYMJK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tGtMIZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7RYMpK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tGtMIpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tGtMI5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7RYMZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGtMJJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tGtMJZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tGtMJpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="client" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s61TUJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGtMJ5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGtMKJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tGtzMJK1Ee2EVNitZyU9YQ" source="_tGvBUJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7RYM5K1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tGtzMZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7R_QJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tGtzMpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tGtzM5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7RYNJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGtzNJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tGtzNZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tGtzNpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="input" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s61TUpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGtzN5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGtzOJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tGuaQJK1Ee2EVNitZyU9YQ" source="_tGvBUJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7R_QZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tGuaQZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7SmUJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tGuaQpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tGuaQ5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7R_QpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGuaRJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tGuaRZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tGuaRpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="output" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s616YJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGuaR5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGuaSJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tG29IJK1Ee2EVNitZyU9YQ" source="_tG9DwJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7NGwJK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tG4yU5K1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7Nt0JK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tG4yUJK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tG4yUZK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7NGwZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG6AcZK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG6AcJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tG4yUpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="client" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6t-kpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG6Ac5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG6AcpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tG29IZK1Ee2EVNitZyU9YQ" source="_tG9DwJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7Nt0ZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tG5ZYZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7Nt05K1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tG4yVJK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tG4yVZK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7Nt0pK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG6ngZK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG6ngJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tG5ZYJK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="outputToServer" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6uloZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG6ng5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG6ngpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tG3kMJK1Ee2EVNitZyU9YQ" source="_tG9DwJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7Nt1JK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tG5ZZZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7OU4JK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tG5ZYpK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tG5ZY5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7Nt1ZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG6nhpK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG6nhZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tG5ZZJK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="inputFromServer" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6ulo5K1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG6niJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG6nh5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <edges xsi:type="com.yattasolutions.uml.diagrams.classifier:AssociationVisual" xmi:id="_tG8csJK1Ee2EVNitZyU9YQ" source="_tG9DwJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7OU4ZK1Ee2EVNitZyU9YQ"/>
+    <stereotypes xmi:id="_tG8csZK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s7OU45K1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <nameVisual xmi:id="_tG8cspK1Ee2EVNitZyU9YQ" text=""/>
+    <sourceRole xmi:id="_tG8cs5K1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="">
+      <modelElement href="EVA_TCP_Chat.uml#_s7OU4pK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG8ctJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG8ctZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </sourceRole>
+    <targetRole xmi:id="_tG8ctpK1Ee2EVNitZyU9YQ" aggregationKind="NONE" name="inputHandlerThread" navigable="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s6vzxJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG8ct5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG8cuJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </targetRole>
+  </edges>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_tFXIUJK1Ee2EVNitZyU9YQ" sourceConnectionVisual="_tFYWcJK1Ee2EVNitZyU9YQ" text="Main" item="_tFlK9pK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7I1UJK1Ee2EVNitZyU9YQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_tFY9gJK1Ee2EVNitZyU9YQ" sourceConnectionVisual="_tFY9gZK1Ee2EVNitZyU9YQ" text="Constructor" item="_tFlK_JK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7I1UZK1Ee2EVNitZyU9YQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_tFaLoJK1Ee2EVNitZyU9YQ" sourceConnectionVisual="_tFaLoZK1Ee2EVNitZyU9YQ" text="Stops the main loop within the servers run() method,&#xD;&#xA;&#x9; * closes the server and shuts down every connection handler within the connections list." item="_tFlLEJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7I1UpK1Ee2EVNitZyU9YQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_tGqI0JK1Ee2EVNitZyU9YQ" sourceConnectionVisual="_tGqI0ZK1Ee2EVNitZyU9YQ" text="Connection Handler sub class" item="_tGvBUJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7I1U5K1Ee2EVNitZyU9YQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.diagrams:CommentVisual" xmi:id="_tGrW8JK1Ee2EVNitZyU9YQ" sourceConnectionVisual="_tGrW8ZK1Ee2EVNitZyU9YQ" text="Constructor" item="_tGvBj5K1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s7I1VJK1Ee2EVNitZyU9YQ"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tHDxcJK1Ee2EVNitZyU9YQ" name="UnknownHostException">
+    <modelElement href="EVA_TCP_Chat.uml#_s6Kk8JK1Ee2EVNitZyU9YQ"/>
+    <visualProperties xmi:id="_tHDxcZK1Ee2EVNitZyU9YQ" position="-540.0,370.0" size="-1.0,-1.0" visible="false"/>
+    <stereotypes xmi:id="_tHDxcpK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s6LMAJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <visibility xmi:id="_tHDxc5K1Ee2EVNitZyU9YQ" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tHEYgJK1Ee2EVNitZyU9YQ" name="IOException">
+    <modelElement href="EVA_TCP_Chat.uml#_s6GTgJK1Ee2EVNitZyU9YQ"/>
+    <visualProperties xmi:id="_tHEYgZK1Ee2EVNitZyU9YQ" position="893.0,370.0" size="105.0,152.0" visible="false"/>
+    <stereotypes xmi:id="_tHEYgpK1Ee2EVNitZyU9YQ" name="Reference">
+      <modelElement href="EVA_TCP_Chat.uml#_s6G6kJK1Ee2EVNitZyU9YQ"/>
+    </stereotypes>
+    <visibility xmi:id="_tHEYg5K1Ee2EVNitZyU9YQ" label="+"/>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tFlKyZK1Ee2EVNitZyU9YQ" name="Server" associationsOut="_tFhgYJK1Ee2EVNitZyU9YQ _tFiHcJK1Ee2EVNitZyU9YQ _tFiugJK1Ee2EVNitZyU9YQ _tFj8oJK1Ee2EVNitZyU9YQ _tFkjsJK1Ee2EVNitZyU9YQ _tFlKwJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s5eBYJK1Ee2EVNitZyU9YQ"/>
+    <visualProperties xmi:id="_tFlKypK1Ee2EVNitZyU9YQ" position="548.0,-113.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tFlKy5K1Ee2EVNitZyU9YQ" label="+"/>
+    <attributes xmi:id="_tFlKzJK1Ee2EVNitZyU9YQ" name="threadpool">
+      <modelElement href="EVA_TCP_Chat.uml#_s6wa0ZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlKzZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6xB4JK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlKzpK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlKz5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK0JK1Ee2EVNitZyU9YQ" name="ExecutorService">
+        <modelElement href="EVA_TCP_Chat.uml#_s6R5sZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK0ZK1Ee2EVNitZyU9YQ" defaultValue="10101" name="port">
+      <modelElement href="EVA_TCP_Chat.uml#_s6xB4ZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK0pK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6xo8JK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK05K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK1JK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK1ZK1Ee2EVNitZyU9YQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK1pK1Ee2EVNitZyU9YQ" name="server">
+      <modelElement href="EVA_TCP_Chat.uml#_s6xo8ZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK15K1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6xo8pK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK2JK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK2ZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK2pK1Ee2EVNitZyU9YQ" name="ServerSocket">
+        <modelElement href="EVA_TCP_Chat.uml#_s6PdcJK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK25K1Ee2EVNitZyU9YQ" name="connections">
+      <modelElement href="EVA_TCP_Chat.uml#_s6xo85K1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK3JK1Ee2EVNitZyU9YQ" name="Generics">
+        <modelElement href="EVA_TCP_Chat.uml#_s6yQAJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_tFlK3ZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6y3EJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK3pK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK35K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK4JK1Ee2EVNitZyU9YQ" name="ArrayList">
+        <modelElement href="EVA_TCP_Chat.uml#_s6RSoJK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK4ZK1Ee2EVNitZyU9YQ" name="finished">
+      <modelElement href="EVA_TCP_Chat.uml#_s6y3EZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK4pK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6y3EpK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK45K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK5JK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK5ZK1Ee2EVNitZyU9YQ" name="boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK5pK1Ee2EVNitZyU9YQ" defaultValue="new File(&quot;userList.lst&quot;)" name="userFile">
+      <modelElement href="EVA_TCP_Chat.uml#_s6zeIJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK55K1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6zeIpK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK6JK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK6ZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK6pK1Ee2EVNitZyU9YQ" name="File">
+        <modelElement href="EVA_TCP_Chat.uml#_s6UV8ZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK65K1Ee2EVNitZyU9YQ" defaultValue="new HashMap&lt;String, String>()" name="userMap">
+      <modelElement href="EVA_TCP_Chat.uml#_s6zeI5K1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK7JK1Ee2EVNitZyU9YQ" name="Generics">
+        <modelElement href="EVA_TCP_Chat.uml#_s60FMJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_tFlK7ZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s60FMpK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK7pK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK75K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK8JK1Ee2EVNitZyU9YQ" name="HashMap">
+        <modelElement href="EVA_TCP_Chat.uml#_s6WyMZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tFlK8ZK1Ee2EVNitZyU9YQ" defaultValue="new ReentrantLock()" name="userMapLock">
+      <modelElement href="EVA_TCP_Chat.uml#_s60sQJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlK8pK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s60sQpK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlK85K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlK9JK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tFlK9ZK1Ee2EVNitZyU9YQ" name="ReentrantLock">
+        <modelElement href="EVA_TCP_Chat.uml#_s6Tu4ZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_tFlK9pK1Ee2EVNitZyU9YQ" comments="_tFXIUJK1Ee2EVNitZyU9YQ" targetConnectionVisual="_tFYWcJK1Ee2EVNitZyU9YQ" name="main" staticOperation="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s5fPgJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlK95K1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFlK-JK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tFlK-ZK1Ee2EVNitZyU9YQ" name="args">
+        <modelElement href="EVA_TCP_Chat.uml#_s5fPgZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tFlK-pK1Ee2EVNitZyU9YQ" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_tFlK-5K1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tFlK_JK1Ee2EVNitZyU9YQ" comments="_tFY9gJK1Ee2EVNitZyU9YQ" targetConnectionVisual="_tFY9gZK1Ee2EVNitZyU9YQ" name="Server">
+      <modelElement href="EVA_TCP_Chat.uml#_s5f2kZK1Ee2EVNitZyU9YQ"/>
+      <keywords xmi:id="_tFlK_ZK1Ee2EVNitZyU9YQ" keyword="create"/>
+      <visibility xmi:id="_tFlK_pK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFlK_5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tFlLAJK1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s5f2lJK1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tFlLAZK1Ee2EVNitZyU9YQ" name="Server">
+          <modelElement href="EVA_TCP_Chat.uml#_s5eBYJK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_tFlLApK1Ee2EVNitZyU9YQ" name="Server">
+      <modelElement href="EVA_TCP_Chat.uml#_s5gdoJK1Ee2EVNitZyU9YQ"/>
+      <keywords xmi:id="_tFlLA5K1Ee2EVNitZyU9YQ" keyword="create"/>
+      <visibility xmi:id="_tFlLBJK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFlLBZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tFlLBpK1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s5gdpJK1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tFlLB5K1Ee2EVNitZyU9YQ" name="Server">
+          <modelElement href="EVA_TCP_Chat.uml#_s5eBYJK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_tFlLCJK1Ee2EVNitZyU9YQ" name="port">
+        <modelElement href="EVA_TCP_Chat.uml#_s5gdoZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tFlLCZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tFlLCpK1Ee2EVNitZyU9YQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tFlLC5K1Ee2EVNitZyU9YQ" name="run">
+      <modelElement href="EVA_TCP_Chat.uml#_s5gdpZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tFlLDJK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s5hEsJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_tFlLDZK1Ee2EVNitZyU9YQ" name="Annotations">
+        <modelElement href="EVA_TCP_Chat.uml#_s5hEsZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tFlLDpK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tFlLD5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tFlLEJK1Ee2EVNitZyU9YQ" comments="_tFaLoJK1Ee2EVNitZyU9YQ" targetConnectionVisual="_tFaLoZK1Ee2EVNitZyU9YQ" name="shutDownServer">
+      <modelElement href="EVA_TCP_Chat.uml#_s5hEs5K1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlLEZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlLEpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tFlLE5K1Ee2EVNitZyU9YQ" name="broadcast">
+      <modelElement href="EVA_TCP_Chat.uml#_s5hrwJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlLFJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlLFZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tFlLFpK1Ee2EVNitZyU9YQ" name="s">
+        <modelElement href="EVA_TCP_Chat.uml#_s5hrwZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tFlLF5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tFlLGJK1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tFlLGZK1Ee2EVNitZyU9YQ" name="log">
+      <modelElement href="EVA_TCP_Chat.uml#_s5iS0JK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlLGpK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlLG5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tFlLHJK1Ee2EVNitZyU9YQ" name="s">
+        <modelElement href="EVA_TCP_Chat.uml#_s5iS0ZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tFlLHZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tFlLHpK1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tFlLH5K1Ee2EVNitZyU9YQ" name="checkForUserMapFile">
+      <modelElement href="EVA_TCP_Chat.uml#_s5iS0pK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlLIJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlLIZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tFlLIpK1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s6ptIJK1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tFlLI5K1Ee2EVNitZyU9YQ" name="File">
+          <modelElement href="EVA_TCP_Chat.uml#_s6UV8ZK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_tFlLJJK1Ee2EVNitZyU9YQ" name="loadUserMap">
+      <modelElement href="EVA_TCP_Chat.uml#_s5i54JK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlLJZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlLJpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tFlLJ5K1Ee2EVNitZyU9YQ" name="saveUserMap">
+      <modelElement href="EVA_TCP_Chat.uml#_s5i54ZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tFlLKJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tFlLKZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tG9DwJK1Ee2EVNitZyU9YQ" name="Client" associationsOut="_tG29IJK1Ee2EVNitZyU9YQ _tG29IZK1Ee2EVNitZyU9YQ _tG3kMJK1Ee2EVNitZyU9YQ _tG8csJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s5LGcJK1Ee2EVNitZyU9YQ"/>
+    <visualProperties xmi:id="_tG9DwZK1Ee2EVNitZyU9YQ" position="-56.0,14.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tG9DwpK1Ee2EVNitZyU9YQ" label="+"/>
+    <attributes xmi:id="_tG9Dw5K1Ee2EVNitZyU9YQ" defaultValue="10101" name="port">
+      <modelElement href="EVA_TCP_Chat.uml#_s6sJYJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9DxJK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6tXgJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9DxZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9DxpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9Dx5K1Ee2EVNitZyU9YQ" name="int">
+        <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9DyJK1Ee2EVNitZyU9YQ" defaultValue="&quot;10.0.3.103&quot;" name="ipadr">
+      <modelElement href="EVA_TCP_Chat.uml#_s6tXgZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9DyZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6t-kZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9DypK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9Dy5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9DzJK1Ee2EVNitZyU9YQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9DzZK1Ee2EVNitZyU9YQ" name="client">
+      <modelElement href="EVA_TCP_Chat.uml#_s6t-kpK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9DzpK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6uloJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9Dz5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9D0JK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9D0ZK1Ee2EVNitZyU9YQ" name="Socket">
+        <modelElement href="EVA_TCP_Chat.uml#_s6JW0ZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9D0pK1Ee2EVNitZyU9YQ" name="outputToServer">
+      <modelElement href="EVA_TCP_Chat.uml#_s6uloZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9D05K1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6ulopK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9D1JK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9D1ZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9D1pK1Ee2EVNitZyU9YQ" name="PrintWriter">
+        <modelElement href="EVA_TCP_Chat.uml#_s6HhoZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9D15K1Ee2EVNitZyU9YQ" name="inputFromServer">
+      <modelElement href="EVA_TCP_Chat.uml#_s6ulo5K1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9D2JK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6vMsJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9D2ZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9D2pK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9D25K1Ee2EVNitZyU9YQ" name="BufferedReader">
+        <modelElement href="EVA_TCP_Chat.uml#_s6D3QJK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9D3JK1Ee2EVNitZyU9YQ" defaultValue="false" name="isDone">
+      <modelElement href="EVA_TCP_Chat.uml#_s6vMsZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9D3ZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6vzwJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9D3pK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9D35K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9D4JK1Ee2EVNitZyU9YQ" name="Boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9D4ZK1Ee2EVNitZyU9YQ" defaultValue="false" name="isReconnectAttempt">
+      <modelElement href="EVA_TCP_Chat.uml#_s6vzwZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9D4pK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6vzw5K1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9D45K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9D5JK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9D5ZK1Ee2EVNitZyU9YQ" name="Boolean">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tG9D5pK1Ee2EVNitZyU9YQ" name="inputHandlerThread">
+      <modelElement href="EVA_TCP_Chat.uml#_s6vzxJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9D55K1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s6wa0JK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9D6JK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9D6ZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tG9D6pK1Ee2EVNitZyU9YQ" name="Thread">
+        <modelElement href="EVA_TCP_Chat.uml#_s6lbsJK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_tG9D65K1Ee2EVNitZyU9YQ" name="main" staticOperation="true">
+      <modelElement href="EVA_TCP_Chat.uml#_s5R0IJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG9D7JK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG9D7ZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tG9D7pK1Ee2EVNitZyU9YQ" name="args">
+        <modelElement href="EVA_TCP_Chat.uml#_s5R0IZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tG9D75K1Ee2EVNitZyU9YQ" label="1..*" max="-1" min="1"/>
+        <type xmi:id="_tG9D8JK1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tG9D8ZK1Ee2EVNitZyU9YQ" name="Client">
+      <modelElement href="EVA_TCP_Chat.uml#_s5TCQZK1Ee2EVNitZyU9YQ"/>
+      <keywords xmi:id="_tG9D8pK1Ee2EVNitZyU9YQ" keyword="create"/>
+      <stereotypes xmi:id="_tG9D85K1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s5TpUpK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9D9JK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG9D9ZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tG9D9pK1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s5TpU5K1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tG9D95K1Ee2EVNitZyU9YQ" name="Client">
+          <modelElement href="EVA_TCP_Chat.uml#_s5LGcJK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_tG9D-JK1Ee2EVNitZyU9YQ" name="Client">
+      <modelElement href="EVA_TCP_Chat.uml#_s5UQYJK1Ee2EVNitZyU9YQ"/>
+      <keywords xmi:id="_tG9D-ZK1Ee2EVNitZyU9YQ" keyword="create"/>
+      <visibility xmi:id="_tG9D-pK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG9D-5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tG9D_JK1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s5U3c5K1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tG9D_ZK1Ee2EVNitZyU9YQ" name="Client">
+          <modelElement href="EVA_TCP_Chat.uml#_s5LGcJK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_tG9D_pK1Ee2EVNitZyU9YQ" name="address">
+        <modelElement href="EVA_TCP_Chat.uml#_s5UQYZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tG9D_5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tG9EAJK1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+      <parameters xmi:id="_tG9EAZK1Ee2EVNitZyU9YQ" name="port">
+        <modelElement href="EVA_TCP_Chat.uml#_s5U3cJK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tG9EApK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tG9EA5K1Ee2EVNitZyU9YQ" name="int">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tG9EBJK1Ee2EVNitZyU9YQ" name="run">
+      <modelElement href="EVA_TCP_Chat.uml#_s5VegJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tG9EBZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s5VegZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_tG9EBpK1Ee2EVNitZyU9YQ" name="Annotations">
+        <modelElement href="EVA_TCP_Chat.uml#_s5WFkJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tG9EB5K1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tG9ECJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tG9ECZK1Ee2EVNitZyU9YQ" name="connect">
+      <modelElement href="EVA_TCP_Chat.uml#_s5WsoZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG9ECpK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9EC5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tG9EDJK1Ee2EVNitZyU9YQ" name="reconnect">
+      <modelElement href="EVA_TCP_Chat.uml#_s5X6wJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG9EDZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9EDpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tG9ED5K1Ee2EVNitZyU9YQ" name="shutdownClient">
+      <modelElement href="EVA_TCP_Chat.uml#_s5X6wZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tG9EEJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tG9EEZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tHGNsJK1Ee2EVNitZyU9YQ" name="InputHandler">
+    <modelElement href="EVA_TCP_Chat.uml#_s5ZI4JK1Ee2EVNitZyU9YQ"/>
+    <visualProperties xmi:id="_tHGNsZK1Ee2EVNitZyU9YQ" position="-57.0,365.0" size="143.0,104.0"/>
+    <visibility xmi:id="_tHGNspK1Ee2EVNitZyU9YQ" label="~"/>
+    <operations xmi:id="_tHGNs5K1Ee2EVNitZyU9YQ" name="run">
+      <modelElement href="EVA_TCP_Chat.uml#_s5ZI4ZK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tHGNtJK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s5Zv8JK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_tHGNtZK1Ee2EVNitZyU9YQ" name="Annotations">
+        <modelElement href="EVA_TCP_Chat.uml#_s5Zv8ZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tHGNtpK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tHGNt5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+  </nodes>
+  <nodes xsi:type="com.yattasolutions.uml.diagrams.classifier:ClassifierVisual" xmi:id="_tGvBUJK1Ee2EVNitZyU9YQ" comments="_tGqI0JK1Ee2EVNitZyU9YQ" targetConnectionVisual="_tGqI0ZK1Ee2EVNitZyU9YQ" name="ConnectionHandler" associationsOut="_tGtMIJK1Ee2EVNitZyU9YQ _tGtzMJK1Ee2EVNitZyU9YQ _tGuaQJK1Ee2EVNitZyU9YQ">
+    <modelElement href="EVA_TCP_Chat.uml#_s5jg8JK1Ee2EVNitZyU9YQ"/>
+    <visualProperties xmi:id="_tGvBUZK1Ee2EVNitZyU9YQ" position="550.0,301.0" size="-1.0,-1.0"/>
+    <visibility xmi:id="_tGvBUpK1Ee2EVNitZyU9YQ" label="~"/>
+    <attributes xmi:id="_tGvBU5K1Ee2EVNitZyU9YQ" name="client">
+      <modelElement href="EVA_TCP_Chat.uml#_s61TUJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tGvBVJK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s61TUZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tGvBVZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBVpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tGvBV5K1Ee2EVNitZyU9YQ" name="Socket">
+        <modelElement href="EVA_TCP_Chat.uml#_s6JW0ZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tGvBWJK1Ee2EVNitZyU9YQ" name="input">
+      <modelElement href="EVA_TCP_Chat.uml#_s61TUpK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tGvBWZK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s61TU5K1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tGvBWpK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBW5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tGvBXJK1Ee2EVNitZyU9YQ" name="BufferedReader">
+        <modelElement href="EVA_TCP_Chat.uml#_s6D3QJK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tGvBXZK1Ee2EVNitZyU9YQ" name="output">
+      <modelElement href="EVA_TCP_Chat.uml#_s616YJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tGvBXpK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s616YZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tGvBX5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBYJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tGvBYZK1Ee2EVNitZyU9YQ" name="PrintWriter">
+        <modelElement href="EVA_TCP_Chat.uml#_s6HhoZK1Ee2EVNitZyU9YQ"/>
+      </type>
+    </attributes>
+    <attributes xmi:id="_tGvBYpK1Ee2EVNitZyU9YQ" name="nickname">
+      <modelElement href="EVA_TCP_Chat.uml#_s616YpK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tGvBY5K1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s616Y5K1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tGvBZJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBZZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <type xmi:id="_tGvBZpK1Ee2EVNitZyU9YQ" name="String">
+        <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </type>
+    </attributes>
+    <operations xmi:id="_tGvBZ5K1Ee2EVNitZyU9YQ" name="run">
+      <modelElement href="EVA_TCP_Chat.uml#_s5kIAJK1Ee2EVNitZyU9YQ"/>
+      <stereotypes xmi:id="_tGvBaJK1Ee2EVNitZyU9YQ" name="LegacyStyledElement">
+        <modelElement href="EVA_TCP_Chat.uml#_s5kIAZK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <stereotypes xmi:id="_tGvBaZK1Ee2EVNitZyU9YQ" name="Annotations">
+        <modelElement href="EVA_TCP_Chat.uml#_s5kvEJK1Ee2EVNitZyU9YQ"/>
+      </stereotypes>
+      <visibility xmi:id="_tGvBapK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tGvBa5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tGvBbJK1Ee2EVNitZyU9YQ" name="handleCommand">
+      <modelElement href="EVA_TCP_Chat.uml#_s5kvEpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBbZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBbpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tGvBb5K1Ee2EVNitZyU9YQ" name="userInput">
+        <modelElement href="EVA_TCP_Chat.uml#_s5kvE5K1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tGvBcJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tGvBcZK1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tGvBcpK1Ee2EVNitZyU9YQ" name="changeNickname">
+      <modelElement href="EVA_TCP_Chat.uml#_s5lWIJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBc5K1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBdJK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tGvBdZK1Ee2EVNitZyU9YQ" name="userInput">
+        <modelElement href="EVA_TCP_Chat.uml#_s5lWIZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tGvBdpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tGvBd5K1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tGvBeJK1Ee2EVNitZyU9YQ" name="isKnownUser">
+      <modelElement href="EVA_TCP_Chat.uml#_s5lWIpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBeZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBepK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tGvBe5K1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s5lWI5K1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tGvBfJK1Ee2EVNitZyU9YQ" name="boolean">
+          <modelElement href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#boolean"/>
+        </type>
+      </outParameters>
+    </operations>
+    <operations xmi:id="_tGvBfZK1Ee2EVNitZyU9YQ" name="shutDownConnectionHandler">
+      <modelElement href="EVA_TCP_Chat.uml#_s5lWJJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBfpK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBf5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tGvBgJK1Ee2EVNitZyU9YQ" name="askForNickname">
+      <modelElement href="EVA_TCP_Chat.uml#_s5lWJZK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBgZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBgpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tGvBg5K1Ee2EVNitZyU9YQ" name="messageToClient">
+      <modelElement href="EVA_TCP_Chat.uml#_s5l9MJK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBhJK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBhZK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <parameters xmi:id="_tGvBhpK1Ee2EVNitZyU9YQ" name="s">
+        <modelElement href="EVA_TCP_Chat.uml#_s5l9MZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tGvBh5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tGvBiJK1Ee2EVNitZyU9YQ" name="String">
+          <modelElement href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+        </type>
+      </parameters>
+    </operations>
+    <operations xmi:id="_tGvBiZK1Ee2EVNitZyU9YQ" name="printConnectedUsers">
+      <modelElement href="EVA_TCP_Chat.uml#_s5l9MpK1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBipK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBi5K1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tGvBjJK1Ee2EVNitZyU9YQ" name="printHelp">
+      <modelElement href="EVA_TCP_Chat.uml#_s5l9M5K1Ee2EVNitZyU9YQ"/>
+      <visibility xmi:id="_tGvBjZK1Ee2EVNitZyU9YQ" label="-"/>
+      <cardinality xmi:id="_tGvBjpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+    </operations>
+    <operations xmi:id="_tGvBj5K1Ee2EVNitZyU9YQ" comments="_tGrW8JK1Ee2EVNitZyU9YQ" targetConnectionVisual="_tGrW8ZK1Ee2EVNitZyU9YQ" name="ConnectionHandler">
+      <modelElement href="EVA_TCP_Chat.uml#_s6qUMJK1Ee2EVNitZyU9YQ"/>
+      <keywords xmi:id="_tGvBkJK1Ee2EVNitZyU9YQ" keyword="create"/>
+      <visibility xmi:id="_tGvBkZK1Ee2EVNitZyU9YQ" label="+"/>
+      <cardinality xmi:id="_tGvBkpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+      <outParameters xmi:id="_tGvBk5K1Ee2EVNitZyU9YQ">
+        <modelElement href="EVA_TCP_Chat.uml#_s6qUNJK1Ee2EVNitZyU9YQ"/>
+        <type xmi:id="_tGvBlJK1Ee2EVNitZyU9YQ" name="ConnectionHandler">
+          <modelElement href="EVA_TCP_Chat.uml#_s5jg8JK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </outParameters>
+      <parameters xmi:id="_tGvBlZK1Ee2EVNitZyU9YQ" name="client">
+        <modelElement href="EVA_TCP_Chat.uml#_s6qUMZK1Ee2EVNitZyU9YQ"/>
+        <cardinality xmi:id="_tGvBlpK1Ee2EVNitZyU9YQ" label="1" max="1" min="1"/>
+        <type xmi:id="_tGvBl5K1Ee2EVNitZyU9YQ" name="Socket">
+          <modelElement href="EVA_TCP_Chat.uml#_s6JW0ZK1Ee2EVNitZyU9YQ"/>
+        </type>
+      </parameters>
+    </operations>
+  </nodes>
+</com.yattasolutions.uml.diagrams.classifier:ClassDiagram>
